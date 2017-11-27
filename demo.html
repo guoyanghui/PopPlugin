@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="popPlugin.css" rel="stylesheet">
+    <script src="jquery-3.2.1.min.js"></script>
+    <script src="popPlugin.js"></script>
+</head>
+<body>
+    <script>
+        $(function(){
+            /*
+            * 请求接口：
+            * var url = "";
+            * $.post(url,null,function(result){
+            *       if(result.success){
+            *           var content = result.data.mainBody;
+            *           
+            *       }
+            * })
+            * 
+            * 
+            * */
+            var popPlugin = new PopPlugin({
+                title:"近帮合作协议",
+                content:"<p>1,发达省份</p><p>1,发达省份</p><p>1,发达省份</p><p>1,发达省份</p><p>1,发达省份</p><p>1,发达省份</p><p>1,发达省份</p><p>1,发达省份</p><p>1,发达省份</p><p>1,发达省份</p>",
+                agreeContent:"我已阅读并同意xxxx协议",
+                methods:{
+                    nextFn:function(){
+                        this.nextBtn.on("click",function(){
+                            if($(this).hasClass("active")){
+                                /*点击下一步触发的事件  发送请求*/
+                                /*
+                                * var url = "";
+                                * $.post(url,null,function(){
+                                *   
+                                * })
+                                * 
+                                * */
+                                /*隐藏弹窗*/
+                                popPlugin.hide();
+                            }
+                        })
+                    }
+                }
+            });
+            /*弹窗显示*/
+            popPlugin.show();
+            /*下一步事件*/
+            popPlugin.nextFn();
+        });
+        
+    </script>
+</body>
+</html>
