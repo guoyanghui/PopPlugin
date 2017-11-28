@@ -39,6 +39,7 @@ div[data-popPlugin] .pp-content .pp-body{
     font-size: 14px;
     padding-left: 24px;
     padding-right: 24px;
+    overflow-x: hidden;
 }
 
 div[data-popPlugin] .pp-content .pp-footer{
